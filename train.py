@@ -444,9 +444,9 @@ def get_args():
 
     parser.add_argument("--model_type", default=None, type=str, required=True,
                         help="Model type selected in the list: " + ", ".join(MODEL_CLASSES.keys()))
-    parser.add_argument("--valid_file", default=None, type=str,
+    parser.add_argument("--valid_file", default="./data_set/squadqg/dev.json", type=str,
                         help="Validing data (json format) for validing. Keys: source and target")
-    parser.add_argument("--train_file", default=None, type=str,
+    parser.add_argument("--train_file", default="./data_set/squadqg/train.json", type=str,
                         help="Training data (json format) for training. Keys: source and target")
 
     parser.add_argument("--train_src_file", default=None, type=str)

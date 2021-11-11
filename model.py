@@ -7,8 +7,8 @@ from torch import nn
 import torch.nn.functional as F
 from torch.nn.modules.loss import _Loss
 
-from bert import BertModel, BertOnlyMLMHead
-# from transformers.models.bert.modeling_bert import BertOnlyMLMHead
+# from bert import BertModel, BertOnlyMLMHead
+from transformers.models.bert.modeling_bert import BertModel, BertOnlyMLMHead
 # from transformers.modeling_bert import BertOnlyMLMHead
 
 
@@ -148,7 +148,7 @@ class NAT(nn.Module):
         decoder_relative_position_mask = None
         source_len = source_mask.size(1)
 
-        outputs = self.bert(input_ids=input_ids, keep_source_unmodified=-1, attention_mask=attention_mask,
+        outputs = self.bert(input_ids=input_ids, attention_mask=attention_mask,
                             token_type_ids=token_type_ids,
                             output_hidden_states=False,
                             position_ids=position_ids)
